@@ -47,10 +47,9 @@ resource_name :osx_user_manage
 
 property :username, String, name_property: true, required: true
 property :realname, String, required: true
-property :uid, String, required: false
-property :gid, String, required: false
 property :password, String, required: true
 property :shell, String, required: false
+property :admin, String, required: true
 
 basePassword = rand(30042 .. 2039293302).to_i + rand(1000 .. 3932020).to_i
 secPassword = rand(987003 .. 9023040).to_i + rand(1 .. 230300300).to_i / 3
@@ -72,10 +71,12 @@ action :create do
       action :run
     end
 
-    execute 'add_user_to_admin_groups' do
-      command "dseditgroup -o edit -a #{username} -t user admin"
-      sensitive true
-      action :run
+    if admin == 'true'
+      execute 'add_user_to_admin_groups' do
+        command "dseditgroup -o edit -a #{username} -t user admin"
+        sensitive true
+        action :run
+      end
     end
 
     execute 'add_user_to_wheel_group' do
