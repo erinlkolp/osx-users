@@ -1,4 +1,6 @@
 # osx-users
 
-TODO: Enter the cookbook description here.
+A Chef cookbook to add or remove Mac OSX users.
+
+##### WIP
 
