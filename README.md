@@ -11,8 +11,7 @@ Usage
 -----
 
 ```
-osx_user_manage "#{target_user}" do
-  username "username"
+osx_user_manage "username" do
   realname "User A. Name"
   password "userpass"
   shell "/bin/bash"

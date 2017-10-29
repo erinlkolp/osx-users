@@ -4,7 +4,7 @@ maintainer_email 'erinlkolpfoss@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures osx-users'
 long_description 'Installs/Configures osx-users'
-version '0.1.0'
+version '0.2.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 issues_url 'https://github.com/erinlkolp/osx-users/issues'
 source_url 'https://github.com/erinlkolp/osx-users'
